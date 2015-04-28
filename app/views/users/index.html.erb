@@ -26,4 +26,15 @@
 
 <br>
 
+<h4>Send a text message:</h4>
+
+<%= form_tag sms_path do %>
+  <%= submit_tag "Send" %>
+  <%= label_tag :message, "Message:" %>
+  <%= text_field_tag :message %>
+  <%= label_tag :phone_number, "Phone Number: +1" %>
+  <%= text_field_tag :phone_number %> (enter only numbers, no spaces or symbols)
+<% end %>
+
+<br>
 <%= link_to 'Log Out', session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
