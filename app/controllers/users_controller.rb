@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, except: [:new, :create, :index]
+  before_action :authenticate, except: [:new, :create]
+  before_action :authorize,    only:   [:edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -28,6 +30,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        session[:user_id] = @user.id
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -71,5 +74,17 @@ class UsersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     params.require(:user).permit(:email, :name, :password, :password_confirmation)
+  end
+
+  def authenticate
+    unless logged_in?
+      redirect_to new_session_path
+    end
+  end
+
+  def authorize
+    unless current_user == @user
+      redirect_to new_session_path
+    end
   end
 end

@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>McclaneMinihack</title>
+  <title>McClane Minihack</title>
+  <%= favicon_link_tag %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <h1><%= link_to "Welcome to the Rails <3s Twilio Template!", root_path %></h1>
+  <%= yield %>
 
 </body>
 </html>
