@@ -55,9 +55,9 @@ GitHub page][twilio_examples].
 ---
 
 _*_ — The "API key" is in fact two numbers: an Account SID and an Auth Token.
-  These will be globally accessible to your app in the environmental 
+  These will be globally accessible to your app in the environmental
   variables `TWILIO_ACCT_SID` and `TWILIO_AUTH_TOKEN`. Also available will
-  be your `TWILIO_PHONE_NO`. Make sure that **the phone number is only 
+  be your `TWILIO_PHONE_NO`. Make sure that **the phone number is only
   numbers**, without symbols or spaces, and has no leading _1_!
 
   Eg: `(440) 543-4041` is bad, but `4405434041` is good.
