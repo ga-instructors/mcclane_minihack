@@ -31,4 +31,5 @@ group :development, :test do
 
   gem 'rspec-rails'
   gem 'sms-spec'
+  gem 'backbars'
 end
