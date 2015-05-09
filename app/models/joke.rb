@@ -1,5 +1,6 @@
 class Joke
-  self.jokeArray = ["['hip','hip'] (hip hip array!)", 
+  def joke_array
+   ["['hip','hip'] (hip hip array!)", 
    "Q: Whats the object-oriented way to become wealthy? A: Inheritance",
    "Q: How do you tell an introverted computer scientist from an extroverted computer scientist? 
    A: An extroverted computer scientist looks at your shoes when he talks to you.",
@@ -18,16 +19,10 @@ class Joke
    "Can you believe Mozart wrote his 1785 Piano Concerto No. 21 in C? I can't imagine compiling back then!",
    "Two JavaScript variables are in a bar. I'm sorry I cannot be with you, your so not my Type., one says. The other Recasts and they lived happily ever after.",
    "And the bartender says, Success, but youre not ready! So a JavaScript function walks into a bar."
-
-
-
- 
-
-
  ]
- def self.random
-  jokeArray[rand(jokeArray.length)]
+end
+ def random
+  joke_array[rand(joke_array.length)]
  end
-binding.pry
 
 end
