@@ -15,7 +15,10 @@ class Joke
    "There are 10 types of people in the world. Those who understand binary and those who have regular sex.",
    "Unix is user friendly. It's just very particular about who its friends are.",
    "A wife calls her programmer husband and tells him, While youre out, buy some milk. He never returns home.",
-   "Can you believe Mozart wrote his 1785 Piano Concerto No. 21 in C? I can't imagine compiling back then!"
+   "Can you believe Mozart wrote his 1785 Piano Concerto No. 21 in C? I can't imagine compiling back then!",
+   "Two JavaScript variables are in a bar. I'm sorry I cannot be with you, your so not my Type., one says. The other Recasts and they lived happily ever after.",
+   "And the bartender says, Success, but youre not ready! So a JavaScript function walks into a bar."
+
 
 
  
