@@ -23,12 +23,17 @@ gem 'dotenv-rails', :require => 'dotenv/rails-now'
 # for twilio!
 gem 'twilio-ruby', '~> 4.0.0'
 
+gem 'backbars'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
-  gem 'spring'
+  gem 'spring', '1.3.5'
   gem 'pry-rails'
 
   gem 'rspec-rails'
   gem 'sms-spec'
 end
+
+gem 'rails-assets-underscore', source: 'https://rails-assets.org'
+gem 'rails-assets-backbone', source: 'https://rails-assets.org'
