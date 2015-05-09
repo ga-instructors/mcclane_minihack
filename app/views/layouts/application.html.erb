@@ -8,8 +8,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <h1><%= link_to "Welcome to the Rails <3s Twilio Template!", root_path %></h1>
+  <marquee><%= link_to "S(wanson)MS", root_path %></marquee>
+<marquee direction="down" width="500" height="500" behavior="alternate">
+  <marquee behavior="alternate">
+    <%= link_to "S(wanson)MS", root_path %>
+  </marquee>
+</marquee>
+<marquee></marquee>
+  <h1></h1>
   <%= yield %>
 
 </body>
