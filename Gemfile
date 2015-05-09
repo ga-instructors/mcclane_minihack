@@ -23,6 +23,8 @@ gem 'dotenv-rails', :require => 'dotenv/rails-now'
 # for twilio!
 gem 'twilio-ruby', '~> 4.0.0'
 
+gem 'httparty'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
