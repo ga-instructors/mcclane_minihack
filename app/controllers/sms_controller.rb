@@ -4,7 +4,6 @@ class SmsController < ApplicationController
   def create
     sms          = TwilioIntegration.new
     phone_number = "+1#{params[:phone_number]}"
-    binding.pry
     swansonism   = Swanson.get_ron
     message      = params[:message] + "... Also, Ron Swanson sez: " + swansonism
     # Include extra information here and in sms below
