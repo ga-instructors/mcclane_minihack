@@ -10,7 +10,9 @@ $( document ).ready(function() {
     var contentType = $('#type').val();
     
     $('#submit').click( function(){
+
     	var number = $('#userNum').val();
+    	if (contentType === "jokes"){
     	  $.ajax({
 		    type: 'POST',
 		    url: '/',
@@ -22,6 +24,8 @@ $( document ).ready(function() {
 		    }).done (function(data){
 		      console.log('it worked')
 		    });
+		 }
     }); 
+
 
 });
