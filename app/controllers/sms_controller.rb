@@ -24,6 +24,7 @@ class SmsController < ApplicationController
     redirect_to "#{sms_path}?phone_number=#{phone_number}&message=#{URI.encode message}"
   end
 
+
   private
 
     def authenticate
