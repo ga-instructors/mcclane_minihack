@@ -16,11 +16,8 @@ $( document ).ready(function() {
 	        url: "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=animal ",
 	      }).done(function(response){
 	      	console.log(response)
-	        $('body').css("background-image", "url(" + response.data.image_url + ");", "background-size", "cover")
+	        $('body').css("background-image", "url(" + response.data.image_url + ")", "background-size", "cover")
 	      });
-
-    	$("<div id='img'>").appendTo('body')
-
 
     	// grabs number input
     	var number = $('#userNum').val();
@@ -36,19 +33,28 @@ $( document ).ready(function() {
 		    }).done (function(data){
 		      console.log('it worked')
 		    });
-		 }
-		$('#userNum').html('');
-    }); 
-
-    $('<p> testing for animal </p>').appendTo('body')
-    $('p').click(function(){
-    	$.ajax({
+		 }else if (contentType === "pics"){
+		 	$.ajax({
 	        type: 'GET',
 	        url: "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=animal ",
-	      }).done(function(response){
-	      	console.log(response)
-	        $('body').css("background-image", "url(" + response.data.image_url + ")")
-	      });
-	  });
+	      	}).done(function(response){
+
+			 	$.ajax({
+			    type: 'POST',
+			    url: '/pics',
+			    dataType: 'json',
+			    data: {
+			      url: response.data.image_url,
+			      phone_number: number 
+					}
+			    }).done (function(data){
+			      console.log('it worked')
+			    });
+		 	});
+		 }
+
+
+		$('#userNum').html('');
+    }); 
 
 });
