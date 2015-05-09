@@ -24,6 +24,14 @@ class SmsController < ApplicationController
     redirect_to "#{sms_path}?phone_number=#{phone_number}&message=#{URI.encode message}"
   end
 
+  def pic
+    sms          = TwilioIntegration.new
+    phone_number = "+1#{params["phone_number"].to_i}"
+    media_url = params["url"]
+    logger.info sms.send_mms(phone_number, media_url)
+    redirect_to "#{sms_path}?phone_number=#{phone_number}&message=hello"
+  end
+
 
   private
 
