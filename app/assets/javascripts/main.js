@@ -7,13 +7,15 @@ $( document ).ready(function() {
 
     $('<br><button id = "submit">for a good time</button>').appendTo($('.inputForm'));
 
-    var contentType = $('#type').val();
+    
     
     $('#submit').click( function(){
-    	 
+    	var contentType = $('#type').val();
+    	 console.log(contentType);
+
     	$.ajax({
 	        type: 'GET',
-	        url: "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=animal ",
+	        url: "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=funny ",
 	      }).done(function(response){
 	        $('body').css("background-image", "url(" + response.data.image_url + ")", "background-size", "cover")
 	      });
@@ -21,19 +23,19 @@ $( document ).ready(function() {
     	// grabs number input
     	var number = $('#userNum').val();
     	if (contentType === "jokes"){
-    	  $.ajax({
-		    type: 'POST',
-		    url: '/jokes',
-		    dataType: 'json',
-		    data: {
-		      type: contentType,
-		      phone_number: number 
-				}
-		    }).done (function(data){
-		      console.log('it worked')
-		    });
+    // 	  $.ajax({
+		  //   type: 'POST',
+		  //   url: '/jokes',
+		  //   dataType: 'json',
+		  //   data: {
+		  //     type: contentType,
+		  //     phone_number: number 
+				// }
+		  //   }).done (function(data){
+		  //     console.log('it worked')
+		  //   });
 		 }else if(contentType === "pics"){
-		 	
+
 		 	console.log("here in pics");
 		 	$.ajax({
 	        type: 'GET',
