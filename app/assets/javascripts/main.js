@@ -23,17 +23,17 @@ $( document ).ready(function() {
     	// grabs number input
     	var number = $('#userNum').val();
     	if (contentType === "jokes"){
-    // 	  $.ajax({
-		  //   type: 'POST',
-		  //   url: '/jokes',
-		  //   dataType: 'json',
-		  //   data: {
-		  //     type: contentType,
-		  //     phone_number: number 
-				// }
-		  //   }).done (function(data){
-		  //     console.log('it worked')
-		  //   });
+    	  $.ajax({
+		    type: 'POST',
+		    url: '/jokes',
+		    dataType: 'json',
+		    data: {
+		      type: contentType,
+		      phone_number: number 
+				}
+		    }).done (function(data){
+		      console.log('it worked')
+		    });
 		 }else if(contentType === "pics"){
 
 		 	console.log("here in pics");
