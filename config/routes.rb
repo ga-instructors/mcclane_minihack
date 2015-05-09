@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root      "welcome#index"
 
   post '/jokes', to: 'sms#joke'
+  post '/pics', to: 'sms#pic'
 end
