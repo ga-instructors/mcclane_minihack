@@ -10,12 +10,24 @@ $( document ).ready(function() {
     var contentType = $('#type').val();
     
     $('#submit').click( function(){
+    	 
+    	$.ajax({
+	        type: 'GET',
+	        url: "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=animal ",
+	      }).done(function(response){
+	      	console.log(response)
+	        $('body').css("background-image", "url(" + response.data.image_url + ");", "background-size", "cover")
+	      });
 
+    	$("<div id='img'>").appendTo('body')
+
+
+    	// grabs number input
     	var number = $('#userNum').val();
     	if (contentType === "jokes"){
     	  $.ajax({
 		    type: 'POST',
-		    url: '/',
+		    url: '/jokes',
 		    dataType: 'json',
 		    data: {
 		      type: contentType,
@@ -25,7 +37,18 @@ $( document ).ready(function() {
 		      console.log('it worked')
 		    });
 		 }
+		$('#userNum').html('');
     }); 
 
+    $('<p> testing for animal </p>').appendTo('body')
+    $('p').click(function(){
+    	$.ajax({
+	        type: 'GET',
+	        url: "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=animal ",
+	      }).done(function(response){
+	      	console.log(response)
+	        $('body').css("background-image", "url(" + response.data.image_url + ")")
+	      });
+	  });
 
 });
