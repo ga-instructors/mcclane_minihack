@@ -1,7 +1,11 @@
 # McClane MiniHack
+<<<<<<< HEAD
+#O DOYLE RULEZ
+=======
 
 Qiao was here 
 
+>>>>>>> 678d798b3be4d93c66c2c1583cb26451a1f29241
 ### A **Rails :heart:s Twilio** Template for Web Apps
 
 NICHOLAS WAS HERE
