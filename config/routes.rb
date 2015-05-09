@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resource  :session, only: [:new, :create, :destroy]
   root      "welcome#index"
 
-  post '/joke', to: 'sms#joke'
+  post '/jokes', to: 'sms#joke'
 end

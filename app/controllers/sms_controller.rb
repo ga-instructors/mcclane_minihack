@@ -18,7 +18,8 @@ class SmsController < ApplicationController
   def joke
     sms          = TwilioIntegration.new
     phone_number = "+1#{params["phone_number"].to_i}"
-    message = "A SQL query goes into a bar, walks up to two tables and asks, 'Can I join you?'"
+    joke = Joke.new
+    message = joke.random
     logger.info sms.send(phone_number, message)
     redirect_to "#{sms_path}?phone_number=#{phone_number}&message=#{URI.encode message}"
   end

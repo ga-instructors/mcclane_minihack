@@ -18,7 +18,7 @@ class TwilioIntegration
     @account.messages.create(
       from: TwilioHelper::PHONE,
       to:   phone_number,
-      body: "picture time!"
+      body: "picture time!",
       media_url: media_url
     )
   end
