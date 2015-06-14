@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.1)
       actionpack (= 4.2.1)
@@ -40,6 +41,8 @@ GEM
       activerecord (>= 3.2, <= 4.3)
       rake (~> 10.4)
     arel (6.0.0)
+    backbars (0.0.11)
+      handlebars_assets
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -64,6 +67,11 @@ GEM
     execjs (2.5.2)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    handlebars_assets (0.19.1)
+      execjs (>= 1.2.9)
+      multi_json
+      sprockets (>= 2.0.3)
+      tilt
     i18n (0.7.0)
     jbuilder (2.2.13)
       activesupport (>= 3.0.0, < 5)
@@ -106,6 +114,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.1)
       sprockets-rails
+    rails-assets-backbone (1.1.2)
+      rails-assets-underscore (>= 1.5.0)
+    rails-assets-underscore (1.8.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.6)
@@ -149,7 +160,7 @@ GEM
     slop (3.6.0)
     sms-spec (0.1.10)
       rspec (~> 2.11)
-    spring (1.3.4)
+    spring (1.3.5)
     sprockets (3.0.3)
       rack (~> 1.0)
     sprockets-rails (2.2.4)
@@ -179,6 +190,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (~> 2.6.5)
+  backbars
   bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.1.0)
@@ -188,10 +200,12 @@ DEPENDENCIES
   pg
   pry-rails
   rails (= 4.2.1)
+  rails-assets-backbone!
+  rails-assets-underscore!
   rspec-rails
   sass-rails (~> 5.0)
   sms-spec
-  spring
+  spring (= 1.3.5)
   twilio-ruby (~> 4.0.0)
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

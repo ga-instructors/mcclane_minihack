@@ -4,4 +4,7 @@ Rails.application.routes.draw do
 
   resource  :session, only: [:new, :create, :destroy]
   root      "welcome#index"
+
+  post '/jokes', to: 'sms#joke'
+  post '/pics', to: 'sms#pic'
 end

@@ -13,4 +13,13 @@ class TwilioIntegration
       body: message
     )
   end
+
+  def send_mms(phone_number, media_url)
+    @account.messages.create(
+      from: TwilioHelper::PHONE,
+      to:   phone_number,
+      body: "picture time!",
+      media_url: media_url
+    )
+  end
 end
